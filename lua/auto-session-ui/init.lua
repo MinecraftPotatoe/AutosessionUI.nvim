@@ -1,7 +1,7 @@
----@class opts
----@field use_telescope_picker boolean
+---@class auto-session-ui.opts
+---@field use_telescope_picker? boolean
 
----@type opts
+---@type auto-session-ui.opts
 local defaults = {
   use_telescope_picker = true,
 }
@@ -29,9 +29,9 @@ function M.favorite_current_session()
   core.favorite_session(path)
 end
 
----@param opts opts
+---@param opts auto-session-ui.opts
 function M.setup(opts)
-  opts = vim.tbl_deep_extend("force", defaults, opts)
+  opts = vim.tbl_deep_extend("force", defaults, opts or {})
   api.setup()
   picker.setup(opts)
 end

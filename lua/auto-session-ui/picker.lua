@@ -148,7 +148,7 @@ function M.pick_session_with_tree(session_tree, is_root_tree)
   end
 end
 
----@param opts opts
+---@param opts auto-session-ui.opts
 function M.setup(opts)
   use_telescope = opts.use_telescope_picker
 end
