@@ -2,7 +2,7 @@
 
 Name, sort and pick sessions made with the [auto-session](https://github.com/rmagatti/auto-session) plugin.
 
-![Preview](https://imgur.com/a/jJATd5Q.gif)
+https://github.com/user-attachments/assets/c2a9d320-9407-4acb-8f2f-26a5cffd0fc3
 
 (This plugin is not affiliated with the author of the original [auto-session](https://github.com/rmagatti/auto-session) plugin in any way. It's just a UI script I wrote for myself when using the original plugin)
 
