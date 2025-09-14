@@ -2,7 +2,7 @@
 
 Name, sort and pick sessions made with the [auto-session](https://github.com/rmagatti/auto-session) plugin.
 
-![Preview](https://imgur.com/a/zyFs312.gif)
+![Preview](https://imgur.com/a/jJATd5Q.gif)
 
 (This plugin is not affiliated with the author of the original [auto-session](https://github.com/rmagatti/auto-session) plugin in any way. It's just a UI script I wrote for myself when using the original plugin)
 
@@ -64,6 +64,20 @@ The telescope_picker has some more features, like using
 `<C-d>` to delete a session from in the picker.
 
 But at the moment the picker is not updating the displayed sessions correctly when using the shortcuts, so you might need to close and open it again. It's also a bit slower than the other version, so just set `use_telescope_picker` to false if it annoys you.
+
+## 🎉 Usage
+
+Use the user commands or the lua functions of `require("auto-session-ui)`.
+When naming a new session or renaming it, you can use slasher `/` to separate them into folders.
+
+E.g. naming a session `a/b/c` would create a folder `a` with a folder `b` with a session `c`
+
+## 🔜 Planned features
+
+- 🔍 Search for a session name through all sessions
+- 📁 Rename and move folders
+- 🗺️ Better navigation using the telescope picker
+- 🗃️ Options for sorting (alphabetical, recent, etc.)
 
 ## 📢 Commands
 
