@@ -1,0 +1,5 @@
+local asu = require("auto-session-ui")
+vim.api.nvim_create_user_command("AutosessionUIPick", asu.pick_session, {})
+vim.api.nvim_create_user_command("AutosessionUIAdd", asu.add_current_session, {})
+vim.api.nvim_create_user_command("AutosessionUIRemove", asu.remove_current_session, {})
+vim.api.nvim_create_user_command("AutosessionUIFavorite", asu.favorite_current_session, {})
