@@ -44,6 +44,29 @@ function M.build_tree(sessions)
   return convertedTree
 end
 
+---@param path string? path of a folder in the tree
+---@return SessionTree|nil
+function M.get_tree(path)
+  local tree = M.build_tree(api.get_sessions())
+
+  if path == nil then
+    return tree
+  end
+
+  for _, item in pairs(lib.split(path, "/")) do
+    local matching_folder = lib.lsearch(tree, function(folder)
+      return folder.name == item and core.is_folder(folder)
+    end)
+
+    if matching_folder == nil then
+      return nil
+    else
+      tree = matching_folder.content
+    end
+  end
+  return tree
+end
+
 ---@param session_tree SessionTree
 function M.sort_session_tree_alphabetically(session_tree)
   -- sort by folder/session and then by name

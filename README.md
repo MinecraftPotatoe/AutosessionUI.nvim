@@ -59,18 +59,19 @@ local defaults = {
 
 <!-- config:end -->
 
-The telescope_picker has some more features, like using
-`<C-f>` to favorite a session, or
-`<C-d>` to delete a session from in the picker.
-
-But at the moment the picker is not updating the displayed sessions correctly when using the shortcuts, so you might need to close and open it again. It's also a bit slower than the other version, so just set `use_telescope_picker` to false if it annoys you.
-
 ## 🎉 Usage
 
 Use the user commands or the lua functions of `require("auto-session-ui)`.
 When naming a new session or renaming it, you can use slasher `/` to separate them into folders.
 
 E.g. naming a session `a/b/c` would create a folder `a` with a folder `b` with a session `c`
+
+The telescope_picker - enabled by default - has some useful features, like using
+`<C-f>` to favorite a session, or
+`<C-d>` to delete a session from in the picker, or
+`<C-b>` to go to the back one folder.
+
+It's bit slower than the other version, so just set `use_telescope_picker` to false if it annoys you.
 
 ## 🔜 Planned features
 

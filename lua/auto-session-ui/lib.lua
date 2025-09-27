@@ -9,6 +9,17 @@ function string.findLast(haystack, needle)
   end
 end
 
+function M.split(str, sep)
+  if sep == nil then
+    sep = "%s"
+  end
+  local t = {}
+  for s in string.gmatch(str, "([^" .. sep .. "]+)") do
+    table.insert(t, s)
+  end
+  return t
+end
+
 ---Apply a function to all values in a table
 ---@param tbl table The table to map over
 ---@param f fun(value: any): any The function to apply to each value

@@ -11,7 +11,7 @@ M.SessionData = {}
 function M.SessionData:getFullFolderName()
   return self.fullName:sub(1, self.fullName:findLast("/") - 1)
 end
---- Only returns the outermost foldr
+--- Only returns the outermost folder
 function M.SessionData:getFolderName()
   return self.fullName:sub(1, self.fullName:find("/") - 1)
 end

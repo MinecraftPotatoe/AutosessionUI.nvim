@@ -10,6 +10,21 @@ function M.is_folder(item)
   return item.content ~= nil
 end
 
+--- Returns all folders
+--- @param name string
+function M.getFullFolderName(name)
+  return name:sub(1, name:findLast("/") - 1)
+end
+--- Only returns the outermost folder
+--- @param name string
+function M.getFolderName(name)
+  return name:sub(1, name:find("/") - 1)
+end
+--- @param name string
+function M.getSubName(name)
+  return name:sub(name:find("/") + 1)
+end
+
 ---@param path string
 ---@param list SessionData[]
 ---@return number | nil
