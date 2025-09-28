@@ -13,7 +13,7 @@ local AutoSessionData = {}
 
 ---@return AutoSessionData[]
 local function get_autosession_list()
-  return require("auto-session.lib").get_session_list(as.get_root_dir())
+  return asl.get_session_list(as.get_root_dir())
 end
 
 function M.get_current_session_path()

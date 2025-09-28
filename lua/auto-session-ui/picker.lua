@@ -162,6 +162,11 @@ end
 function M.pick_session_with_tree(session_tree, is_root_tree, path)
   session_tree = prepare_picker_tree(session_tree, is_root_tree, path)
 
+  if #session_tree == 0 then
+    vim.notify("You currently have no sessions added. Use the ':AutosessionUI add' command to add your first session")
+    return
+  end
+
   ---@param choice SessionTreeItem|nil
   local function on_choice(choice)
     if choice == nil then

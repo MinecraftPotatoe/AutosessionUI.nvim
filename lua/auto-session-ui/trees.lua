@@ -88,16 +88,23 @@ function M.sort_session_tree_alphabetically(session_tree)
 end
 
 ---@param sessions SessionData[]
----@return Session
+---@return Session|nil
 local function get_last_session(sessions)
+  if #sessions == 0 then
+    return nil
+  end
+
   -- Sort by last opened
   table.sort(sessions, function(a, b)
     return a.last_opened > b.last_opened
   end)
+
   -- If we are already in the latest session, show the second latest
   local latest = sessions[1]:convert()
-  if latest:isCurrentSession() then
-    latest = sessions[2]:convert()
+  if #sessions > 2 then
+    if latest:isCurrentSession() then
+      latest = sessions[2]:convert()
+    end
   end
 
   latest.format_item = function()
@@ -123,7 +130,9 @@ function M.add_special_sessions(session_tree)
   end
 
   local last_session = get_last_session(all_sessions)
-  table.insert(session_tree, 1, last_session)
+  if last_session then
+    table.insert(session_tree, 1, last_session)
+  end
 end
 
 return M
