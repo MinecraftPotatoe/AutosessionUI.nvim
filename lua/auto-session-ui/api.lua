@@ -32,7 +32,7 @@ end
 ---@param path string
 function M.restore_session(path)
   vim.cmd.wa()
-  as.RestoreSession(path, { show_message = false })
+  as.restore_session(path, { show_message = false })
 end
 
 function M.setup()
