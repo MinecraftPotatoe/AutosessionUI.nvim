@@ -24,7 +24,7 @@ function M.get_current_session_path()
     end
     return path
   else
-    as.SaveSession(vim.fn.getcwd(), false)
+    as.save_session(vim.fn.getcwd(), false)
     return vim.fn.getcwd()
   end
 end

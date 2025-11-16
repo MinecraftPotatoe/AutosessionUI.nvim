@@ -61,11 +61,11 @@ function M.add_rename_session(path, keep_folder)
     prefix = session:getFullFolderName() .. "/"
   end
 
-  M.remove_session(path)
   vim.ui.input({ prompt = "Choose name:" }, function(displayName)
-    if displayName == nil then
+    if displayName == nil or displayName == "" then
       return
     end
+    M.remove_session(path)
     M.add_session(path, prefix .. displayName)
   end)
 end
